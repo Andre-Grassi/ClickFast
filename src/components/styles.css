@@ -1,0 +1,18 @@
+@import url('../global.css');
+
+header {
+  /* Dimensions */
+  min-height: 5rem;
+
+  /* Display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Styling */
+  background-color: var(--sec-color);
+}
+
+span {
+  color: var(--hilight-color);
+}

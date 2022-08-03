@@ -1,0 +1,34 @@
+:root {
+  /* Rem */
+  font-size: 16px;
+
+  /* Variables */
+  --main-color: #9388a2;
+  --sec-color: rgb(69, 15, 69);
+  --hilight-color: #b856e2;
+  --std-txt-color: rgb(224, 224, 224);
+
+  /* Text */
+  color: var(--std-txt-color);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Box-sizing */
+  box-sizing: border-box;
+}
+
+body {
+  /* Dimensions */
+  height: 100%;
+
+  /* Display */
+  display: flex;
+  flex-direction: column;
+
+  /* Styling */
+  background-color: var(--main-color);
+}
