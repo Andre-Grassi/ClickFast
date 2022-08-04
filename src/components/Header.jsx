@@ -1,3 +1,5 @@
+import Navbar from './Navbar'
+
 // Stylesheet:
 import './styles.css'
 
