@@ -19,15 +19,29 @@
 
   /* Box-sizing */
   box-sizing: border-box;
+
+  /* Font */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
 }
 
 body {
   /* Dimensions */
   height: 100%;
 
+  /* Styling */
+  background-color: var(--main-color);
+}
+
+.App {
+  /* Dimensions */
+  height: 100%;
+  width: 100%;
+
   /* Display */
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   /* Styling */
   background-color: var(--main-color);

@@ -3,6 +3,11 @@
 header {
   /* Dimensions */
   min-height: 5rem;
+  width: 85%;
+  max-width: 50rem;
+  /* min-width: 50rem; Set min-width*/
+
+  /* Spacing */
 
   /* Display */
   display: flex;
@@ -11,8 +16,19 @@ header {
 
   /* Styling */
   background-color: var(--sec-color);
+  border: 0 solid;
+  border-radius: 10px;
+
+  /* Font */
+  /* font-weight: ; */
+}
+
+h1 {
+  font-weight: 900;
 }
 
 span {
   color: var(--hilight-color);
+
+  font-weight: 900;
 }
