@@ -3,13 +3,15 @@ import { useState } from 'react'
 
 // Components:
 import Header from '../components/Header'
+import Main from '../components/Main'
 
-function Index() {
+function App() {
   return (
     <div className="App">
       <Header />
+      <Main />
     </div>
   )
 }
 
-export default Index
+export default App

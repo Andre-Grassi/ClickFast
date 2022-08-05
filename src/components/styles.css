@@ -34,3 +34,53 @@ span {
 
   font-weight: 900;
 }
+
+main {
+  /* Display */
+  /* Ocupy all the space available in height: */
+  flex-basis: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  /* flex-basis: 100%; */
+
+  margin-top: 30%;
+}
+
+.btn {
+  /* flex-basis: 100%; */
+  flex-grow: 1;
+
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  /* Dimensions */
+  height: 6rem;
+  width: 11rem;
+
+  /* Border */
+  border: none;
+  border-radius: 120px;
+
+  /* Color and shadow */
+  background: #a80acf;
+  box-shadow: 0px 0px 74px 40px rgba(217, 61, 255, 0.25);
+
+  /* Font */
+  color: var(--std-txt-color);
+  font-size: 1.5rem;
+  font-weight: 900;
+
+  /* Cursor */
+  cursor: pointer;
+}
