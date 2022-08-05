@@ -27,10 +27,15 @@
 
 body {
   /* Dimensions */
-  height: 100%;
+  height: 100vh;
 
   /* Styling */
   background-color: var(--main-color);
+}
+
+/* Root container that wraps the App component*/
+#root {
+  height: 100%;
 }
 
 .App {
