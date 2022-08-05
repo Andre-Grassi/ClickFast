@@ -1,7 +1,7 @@
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 // Stylesheet:
-import './styles.css'
+import '../styles.css'
 
 function Header() {
   return ( 

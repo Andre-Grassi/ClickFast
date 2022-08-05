@@ -1,7 +1,7 @@
-import './styles.css'
+import '../styles.css'
 
 function Main() {
-  return (  
+  return (
     <main>
       <h2>Test the <span>speed</span> you click</h2>
       <div className="btn">
