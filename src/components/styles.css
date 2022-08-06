@@ -46,13 +46,31 @@ main {
   align-items: center;
 }
 
+/* Div that contains h2 tag and config button tag */
+.container {
+  margin-top: 30%;
+
+  position: relative;
+}
+
+/* Config button tag */
+#config {
+  /* Position */
+  /* 
+    Button will always be at the side
+    of the container and won't occupy any space 
+    (maintains h2 centralized) 
+  */
+  position: absolute;
+  right: 103%; /* Push button outside of container */
+}
+
 h2 {
   text-align: center;
   /* flex-basis: 100%; */
-
-  margin-top: 30%;
 }
 
+/* Container that contains counter button */
 .btn {
   /* flex-basis: 100%; */
   flex-grow: 1;
@@ -63,13 +81,23 @@ h2 {
   justify-content: center;
 }
 
-button {
+#config {
+  /* Dimensions */
+  /* !Config image dimensions! */
+  width: 32px;
+  height: 32px;
+
+  /* Add config image as background */
+  background-image: url(src/assets/configwheel.png);
+}
+
+/* Counter button */
+#counter {
   /* Dimensions */
   height: 6rem;
   width: 11rem;
 
   /* Border */
-  border: none;
   border-radius: 120px;
 
   /* Color and shadow */
@@ -80,7 +108,4 @@ button {
   color: var(--std-txt-color);
   font-size: 1.5rem;
   font-weight: 900;
-
-  /* Cursor */
-  cursor: pointer;
 }

@@ -51,3 +51,15 @@ body {
   /* Styling */
   background-color: var(--main-color);
 }
+
+/* Reset button */
+button {
+  /* Reset border*/
+  border: none;
+
+  /* Reset background */
+  background: none;
+
+  /* Reset cursor */
+  cursor: pointer;
+}
