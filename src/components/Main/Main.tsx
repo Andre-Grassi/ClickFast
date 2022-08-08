@@ -12,7 +12,10 @@ function Main() {
     ------- Hooks -------
   */
   // Use state hook for activating configs container
-  const [active, setActive] = useState(false)
+  const [configActive, setConfigActive] = useState(false)
+
+  // Use state hook for closing log container
+  const [logActive, setLogActive] = useState(true)
 
   // Use state hook for setting timer value
   const DEFAULT_VALUE = 3
@@ -23,7 +26,7 @@ function Main() {
   */
   // Function that sets state of 'active' to its opposite (activate or deactivate)
   function showConfig() {
-    setActive(!active)
+    setConfigActive(!configActive)
   }
 
   // Function that gets the current value of "range.valueAsNumber"
@@ -40,7 +43,7 @@ function Main() {
       <div className="container">
         <button id='config' aria-label='config button' onClick={showConfig}></button>
         <h2>Test the <span>speed</span> you click</h2>
-        {active && <section id='config-container'>
+        {configActive && <section className='glass-container' id='config-container'>
           <h3>Set the interval to count</h3>
           <input type="range" name="interval of time to count" defaultValue={DEFAULT_VALUE} min="1" max="10" step="1" onInput={() => setTimer(getRangeValue())}/>
         </section>}
@@ -50,6 +53,12 @@ function Main() {
       <div className="btn">
         <button id='counter' onClick={() => handleClick(timer)}>Click</button>
       </div>
+
+      {logActive && <div className="glass-container" id="log">
+        <h2>Your click <span>speed</span> is: </h2>
+        <button className="close-btn" onClick={() => setLogActive(false)}></button>
+        <h3>Previous tests: </h3>
+      </div>}
     </main>
   );
 }
