@@ -1,20 +1,23 @@
-// Initialize variables of handleClick function
-let time = 2000     // Time in milliseconds that the timer will run
-let start = false   // Boolean value indicating start of time 
-let counter = 0     // Number of clicks
+// Variables of handleClick function
+let start = false               // Boolean value indicating start of time 
+let counter = 0                 // Number of clicks
+// timer = 3000 (default value) Time in milliseconds that the timer will run
     
 // Count clicks
-function handleClick() {
-      
+// TIMER SHOULD BE PASSED AS SECONDS
+function handleClick(timer: number) {
+  // Turn seconds into milliseconds
+  timer *= 1000
+
   // Activate the timer if this is the first click
   if (start == false) {
     counter = 0
 
     setTimeout(function(){
-      console.log(counter);
+      // console.log(counter);
       start = false
     }
-    , time) }
+    , timer) }
 
   // After first click, it won't reset the timer
   start = true

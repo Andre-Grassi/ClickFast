@@ -1,4 +1,5 @@
 @import url('../global.css');
+@import url('range.css');
 
 header {
   /* Dimensions */
@@ -46,13 +47,64 @@ main {
   align-items: center;
 }
 
-h2 {
-  text-align: center;
-  /* flex-basis: 100%; */
-
+/* Div that contains h2 tag and config button tag */
+.container {
   margin-top: 30%;
+
+  position: relative;
 }
 
+/* Config button tag */
+#config {
+  /* Dimensions */
+  /* !Config image dimensions! */
+  width: 32px;
+  height: 32px;
+
+  /* Add config image as background */
+  background-image: url(src/assets/configwheel.png);
+
+  /* Position */
+  /* 
+    Button will always be at the side
+    of the container and won't occupy any space 
+    (maintains h2 centralized) 
+  */
+  position: absolute;
+  right: 103%; /* Push button outside of container */
+}
+
+/* Container that contains the slider */
+#config-container {
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Space between elements */
+  gap: 0.25rem;
+
+  /* Dimensions */
+  width: 100%;
+  height: 6rem;
+
+  /* Background */
+  background: rgba(119, 52, 141, 0.5);
+
+  /* Border */
+  border-radius: 36px;
+
+  /* Effects */
+  box-shadow: 0px 0px 94px 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* Position */
+  position: absolute;
+}
+
+/* Container that contains counter button */
 .btn {
   /* flex-basis: 100%; */
   flex-grow: 1;
@@ -63,13 +115,13 @@ h2 {
   justify-content: center;
 }
 
-button {
+/* Counter button */
+#counter {
   /* Dimensions */
   height: 6rem;
   width: 11rem;
 
   /* Border */
-  border: none;
   border-radius: 120px;
 
   /* Color and shadow */
@@ -80,7 +132,4 @@ button {
   color: var(--std-txt-color);
   font-size: 1.5rem;
   font-weight: 900;
-
-  /* Cursor */
-  cursor: pointer;
 }

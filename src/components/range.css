@@ -1,0 +1,103 @@
+@import url(../global.css);
+
+/* Variables */
+:root {
+  /* Thumb */
+  --thumb-width: 1.1rem;
+  --thumb-height: 1.1rem;
+  --thumb-bg-color: var(--hilight-color);
+  --thumb-border-radius: 0.42rem;
+
+  /* Track */
+  --track-width: 70%;
+  --track-height: 0.65rem;
+  --track-bg-color: linear-gradient(90deg, var(--main-color), var(--sec-color));
+  --track-border-radius: 0.21rem;
+  --box-shadow: 0 0 0.125rem 0 #555;
+}
+
+/* 
+    ---- Slider ----
+*/
+
+/* All browsers */
+input[type='range'] {
+  /* Reset webkit appearance */
+  -webkit-appearance: none;
+
+  /* Dimensions */
+  width: var(--track-width);
+  height: var(--track-height);
+
+  /* Border */
+  border-radius: var(--track-border-radius);
+
+  /* Background */
+  background: var(--track-bg-color);
+}
+
+/* 
+    ---- Thumb ---- 
+*/
+
+/* Webkit */
+input[type='range']::-webkit-slider-thumb {
+  /* Reset webkit appearance */
+  -webkit-appearance: none;
+
+  /* Dimensions */
+  height: var(--thumb-height);
+  width: var(--thumb-width);
+
+  /* Border */
+  border-radius: var(--thumb-border-radius);
+
+  /* Background */
+  background: var(--thumb-bg-color);
+
+  /* Cursor */
+  cursor: ew-resize;
+
+  /* Effects */
+  box-shadow: var(--box-shadow);
+}
+
+/* Mozilla */
+input[type='range']::-moz-range-thumb {
+  /* Dimensions */
+  height: var(--thumb-height);
+  width: var(--thumb-width);
+
+  /* Border */
+  border: none;
+  border-radius: var(--thumb-border-radius);
+
+  /* Background */
+  background: var(--thumb-bg-color);
+
+  /* Cursor */
+  cursor: ew-resize;
+
+  /* Effects */
+  box-shadow: var(--box-shadow);
+}
+
+/* Ms */
+input[type='”range”']::-ms-thumb {
+  /* Dimensions */
+  height: var(--thumb-height);
+  width: var(--thumb-width);
+
+  /* Border */
+  border: none;
+  border-radius: var(--thumb-border-radius);
+
+  /* Background */
+  background: var(--thumb-bg-color);
+
+  /* Cursor */
+  cursor: ew-resize;
+
+  /* Effects */
+  box-shadow: var(--box-shadow);
+}
