@@ -14,16 +14,21 @@ function handleClick(timer: number) {
     counter = 0
 
     setTimeout(function(){
-      // console.log(counter);
+      console.log(counter);
       start = false
+      console.log(start)
+      return start
     }
-    , timer) }
+    , timer) 
+  }
 
   // After first click, it won't reset the timer
   start = true
 
   // Add the click to counter
   ++counter
+  console.log('x')
+  return start
 }
 
 export default handleClick

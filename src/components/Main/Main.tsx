@@ -21,7 +21,7 @@ function Main() {
   const DEFAULT_VALUE = 3
   const [timer, setTimer] = useState(DEFAULT_VALUE)
  
-  /*
+   /*
     ------- Functions -------
   */
   // Function that sets state of 'active' to its opposite (activate or deactivate)
@@ -51,10 +51,11 @@ function Main() {
 
       {/* Div that contains the main button */}
       <div className="btn">
-        <button id='counter' onClick={() => handleClick(timer)}>Click</button>
+        <button id='counter' onClick={() => setLogActive(handleClick(timer))}>Click</button>
+        {/* To solve this problem: https://stackoverflow.com/questions/54867616/console-log-the-state-after-using-usestate-doesnt-return-the-current-value/54867900#54867900 go to solved answer */}
       </div>
 
-      {logActive && <div className="glass-container" id="log">
+      {!logActive && <div className="glass-container" id="log">
         <h2>Your click <span>speed</span> is: </h2>
         <button className="close-btn" onClick={() => setLogActive(false)}></button>
         <h3>Previous tests: </h3>
