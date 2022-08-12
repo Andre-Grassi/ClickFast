@@ -27,7 +27,6 @@ function Main() {
   // Use state hook for setting the previous entries
   let list: number[] = []
   const [prevClicks, setPrevClicks] = useState(list)
-  let newList = [0] // New list that will contain the last click
  
   /*
     ------- Functions -------
