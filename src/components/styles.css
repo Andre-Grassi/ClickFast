@@ -175,6 +175,10 @@ main {
   left: 88%;
 }
 
+.close-btn:hover {
+  transform: scale(1.225);
+}
+
 .info {
   /* Display */
   display: flex;
