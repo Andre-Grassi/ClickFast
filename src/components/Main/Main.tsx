@@ -116,16 +116,16 @@ function Main() {
       {/* Div that contains the log content */}
       {/* Show when logActive is true and outputs click speed in cps*/}
       {logActive && <div className="glass-container" id="log">
-        <h2>Your click speed is: <span>{ getCps(nClicks, timer) }cps</span></h2>
+        <h2 className="text-center">Your click speed is: <span>{ getCps(nClicks, timer) }cps</span></h2>
         <button className="close-btn" onClick={() => setLogActive(false)}></button>
         {/* If there are previous clicks, then display the tags below */}
-        <div className="info">
-        {(prevClicks.length > 0) && <h3 className="text-center">Average speed: {averageCps(prevClicks, nClicks)}</h3>}
-        {(prevClicks.length > 0) && <h3 className='text-center'>Previous tests: {
-          // Output array with elements separated by "-" and space
-          prevClicks.join(' - ') 
-        }</h3>}
-        </div>
+        {(prevClicks.length > 0) && <div className="info">
+          <h3 className="text-center">Average speed: {averageCps(prevClicks, nClicks)}</h3>
+          <h3 className='text-center'>Previous tests: {
+            // Output array with elements separated by "-" and space
+            prevClicks.join(' - ') 
+          }</h3>
+        </div>}
       </div>}
     </main>
   );
