@@ -175,7 +175,9 @@ main {
   left: 88%;
 }
 
+/* When user hoers over the close button make it bigger*/
 .close-btn:hover {
+  /* Transform button */
   transform: scale(1.225);
 }
 
