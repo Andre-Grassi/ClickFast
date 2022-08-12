@@ -49,6 +49,7 @@ function Main() {
     return Math.round((clicks / interval) * 10) / 10
   }
 
+  // Function that calculates the cps average getting the array of previous clicks and the current clicks (that aren't in the array yet)
   function averageCps(arr: number[], n2: number) {
     // Get the number of elements
     const nOfElements = arr.length + 1
