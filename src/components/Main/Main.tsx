@@ -49,6 +49,14 @@ function Main() {
     return Math.round((clicks / interval) * 10) / 10
   }
 
+  function averageCps(arr: number[], n2: number) {
+    // Get the number of elements
+    const nOfElements = arr.length + 1
+
+    // Return the average ((sum of elements of array + number of clicks at the moment) / number of elements)
+    return (((arr.reduce((prevValue, currValue) => prevValue + currValue)) + n2) / nOfElements)
+  }
+
   /*
     ------- Use Effect Hooks -------
   */
@@ -107,7 +115,8 @@ function Main() {
       {logActive && <div className="glass-container" id="log">
         <h2>Your click speed is: <span>{ getCps(nClicks, timer) }cps</span></h2>
         <button className="close-btn" onClick={() => setLogActive(false)}></button>
-        {/* If there are previous clicks, then display them */}
+        {/* If there are previous clicks, then display the tags below */}
+        {(prevClicks.length > 0) && <h3 className="text-center">Average speed: {averageCps(prevClicks, nClicks)}</h3>}
         {(prevClicks.length > 0) && <h3 className='text-center'>Previous tests: {
           // Output array with elements separated by "-" and space
           prevClicks.join(' - ') 
