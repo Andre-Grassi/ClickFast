@@ -56,22 +56,21 @@ function Main() {
   // Use effect hook to watch for changes in the value of logActive
   useEffect(
     () => {    
+      // When log active is true, then set the prevClicks to the number of clicks performed in the last interval
       if (!logActive)
         return
         
-      // When log active is true, then set the prevClicks to the number of clicks performed in the last interval
-      // Get cps
-      newList[0] = getCps(nClicks, timer)
       // Set oldList to be the prevClicks (gets all the other clicks performed before this interval)
       const oldList = prevClicks // Preserving immutability of prevClicks
 
-      // Concatenate the oldList with the new clicks and sets the prevClicks to the new array generated
-      /*
-        Can't push because pushing will set a new value for the array, and not create a new one
-        since the modified array is stateless, it will just become the value pushed 
-        that's why I'm using array.concat() instead
-      */
-      setPrevClicks(oldList.concat(newList))
+      // Get cps and push the new number of clicks performed
+      oldList.push(getCps(nClicks, timer))
+      // If there are already 5 elements in the list, then remove the first one
+      if (prevClicks.length > 5) 
+        oldList.shift()  
+      
+      // Update state of prevClicks
+      setPrevClicks(oldList)
     }, 
     [logActive]
   )
@@ -109,7 +108,7 @@ function Main() {
       {logActive && <div className="glass-container" id="log">
         <h2>Your click speed is: <span>{ getCps(nClicks, timer) }cps</span></h2>
         <button className="close-btn" onClick={() => setLogActive(false)}></button>
-        <h3>Previous tests: {
+        <h3 className='text-center'>Previous tests: {
           // Output array with elements separated by comma and space
           prevClicks.join(', ') 
         }</h3>

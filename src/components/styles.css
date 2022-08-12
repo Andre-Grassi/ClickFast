@@ -152,6 +152,9 @@ main {
   max-width: 24rem;
   height: 12rem;
 
+  /* Spacing */
+  padding: 0 2.7rem;
+
   /* Position */
   position: absolute;
 }
@@ -170,4 +173,9 @@ main {
   position: absolute;
   bottom: 82%;
   left: 88%;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
 }
