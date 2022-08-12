@@ -107,10 +107,11 @@ function Main() {
       {logActive && <div className="glass-container" id="log">
         <h2>Your click speed is: <span>{ getCps(nClicks, timer) }cps</span></h2>
         <button className="close-btn" onClick={() => setLogActive(false)}></button>
-        <h3 className='text-center'>Previous tests: {
-          // Output array with elements separated by comma and space
-          prevClicks.join(', ') 
-        }</h3>
+        {/* If there are previous clicks, then display them */}
+        {(prevClicks.length > 0) && <h3 className='text-center'>Previous tests: {
+          // Output array with elements separated by "-" and space
+          prevClicks.join(' - ') 
+        }</h3>}
       </div>}
     </main>
   );
