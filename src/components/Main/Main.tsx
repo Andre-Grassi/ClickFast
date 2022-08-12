@@ -49,13 +49,15 @@ function Main() {
     return Math.round((clicks / interval) * 10) / 10
   }
 
-  // Function that calculates the cps average getting the array of previous clicks and the current clicks (that aren't in the array yet)
+  // Function that calculates the cps average getting the array of previous clicks and the current clicks (that aren't in the array yet) then returns the rounded average
   function averageCps(arr: number[], n2: number) {
     // Get the number of elements
     const nOfElements = arr.length + 1
 
-    // Return the average ((sum of elements of array + number of clicks at the moment) / number of elements)
-    return (((arr.reduce((prevValue, currValue) => prevValue + currValue)) + n2) / nOfElements)
+    // Get the average ((sum of elements of array + number of clicks at the moment) / number of elements)
+    const average = (((arr.reduce((prevValue, currValue) => prevValue + currValue)) + n2) / nOfElements)
+    
+    return Math.round((average) * 10) / 10
   }
 
   /*
@@ -117,11 +119,13 @@ function Main() {
         <h2>Your click speed is: <span>{ getCps(nClicks, timer) }cps</span></h2>
         <button className="close-btn" onClick={() => setLogActive(false)}></button>
         {/* If there are previous clicks, then display the tags below */}
+        <div className="info">
         {(prevClicks.length > 0) && <h3 className="text-center">Average speed: {averageCps(prevClicks, nClicks)}</h3>}
         {(prevClicks.length > 0) && <h3 className='text-center'>Previous tests: {
           // Output array with elements separated by "-" and space
           prevClicks.join(' - ') 
         }</h3>}
+        </div>
       </div>}
     </main>
   );
