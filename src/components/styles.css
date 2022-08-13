@@ -134,11 +134,16 @@ main {
   font-weight: 900;
 }
 
+/* Make background color of button darker when pointer hovers over it */
+#counter:hover {
+  background-color: #9215b1;
+}
+
 /* Make it seem that the button is being pressed when user clicks on it */
 #counter:active {
   /* Position*/
   position: relative;
-  top: 0.3rem;
+  top: 0.5rem;
 
   /* Color and shadow */
   background-color: #9215b1;
