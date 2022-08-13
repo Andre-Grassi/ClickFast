@@ -5,25 +5,36 @@ let counter = 0                 // Number of clicks
     
 // Count clicks
 // TIMER SHOULD BE PASSED AS SECONDS
-function handleClick(timer: number) {
+// Runs [timer] amount of milliseconds and then fires two callback functions
+function handleClick(timer: number, callback1: Function, callback2: Function) {
   // Turn seconds into milliseconds
-  timer *= 1000
+  timer *= 1000 //x 1000
 
   // Activate the timer if this is the first click
   if (start == false) {
     counter = 0
 
     setTimeout(function(){
-      // console.log(counter);
+      console.log(counter);
       start = false
+      console.log(start)
+      
+      // Fires the callback functions
+      callback1()
+
+      // Fires callback function that receives as argument the number of clicks (counter)
+      callback2(counter)
     }
-    , timer) }
+    , timer) 
+  }
 
   // After first click, it won't reset the timer
   start = true
 
   // Add the click to counter
   ++counter
+  console.log('x')
+  return start
 }
 
 export default handleClick
